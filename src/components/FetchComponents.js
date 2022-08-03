@@ -11,7 +11,7 @@ function FetchComponents(props) {
       "timeframes": {
         "weekly": {
           "current": numTick,
-          "previous": numTick
+          "previous": 10000-numTick
         }
       }
     }, {
@@ -20,7 +20,7 @@ function FetchComponents(props) {
       
         "weekly": {
           "current": numTick,
-          "previous": numTick
+          "previous": 10000-numTick
         }
       }
     }, {
@@ -29,7 +29,7 @@ function FetchComponents(props) {
      
         "weekly": {
           "current": numTick,
-          "previous": numTick
+          "previous": 10000-numTick
         }
       }
     }, {
@@ -37,7 +37,7 @@ function FetchComponents(props) {
       "timeframes": {
         "weekly": {
           "current": numTick,
-          "previous": numTick
+          "previous": 10000-numTick
         }
       }
     }, {
@@ -45,7 +45,7 @@ function FetchComponents(props) {
       "timeframes": {
         "weekly": {
           "current": numTick,
-          "previous": numTick
+          "previous": 10000-numTick
         }
       }
     }, {
@@ -53,7 +53,7 @@ function FetchComponents(props) {
       "timeframes": {
         "weekly": {
           "current": numTick,
-          "previous": numTick
+          "previous": 10000-numTick
         }
       }
     }]; 
@@ -65,7 +65,7 @@ setData(data);
       getNums()
       const interval=setInterval(()=>{
         getNums()
-       },1000)
+       },100)
        return()=>clearInterval(interval)
          }, [])
     let displayType = props.displayType
