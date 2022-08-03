@@ -1,65 +1,63 @@
 import React, { useEffect, useState } from 'react'
 import StatusComp from './StatusComp'
 const axios = require('axios');
+var numTick = 0;
 function FetchComponents(props) {
     let [data, setData] = useState([])
     async function getNums() {
-      axios.get("http://www.randomnumberapi.com/api/v1.0/random?min=100&max=1000&count=12").then(resp => {
-    console.log(resp.data);
-    const randArray = resp.data
+      numTick = numTick + 1
     data = [{
-      "title": "Work",
+      "title": "Bike",
       "timeframes": {
         "weekly": {
-          "current": randArray[0],
-          "previous": randArray[1]
+          "current": numTick,
+          "previous": numTick
         }
       }
     }, {
-      "title": "Play",
+      "title": "Bike",
       "timeframes": {
       
         "weekly": {
-          "current": randArray[2],
-          "previous": randArray[3]
+          "current": numTick,
+          "previous": numTick
         }
       }
     }, {
-      "title": "Study",
+      "title": "Bike",
       "timeframes": {
      
         "weekly": {
-          "current": randArray[4],
-          "previous": randArray[5]
+          "current": numTick,
+          "previous": numTick
         }
       }
     }, {
-      "title": "Exercise",
+      "title": "Bike",
       "timeframes": {
         "weekly": {
-          "current": randArray[6],
-          "previous": randArray[7]
+          "current": numTick,
+          "previous": numTick
         }
       }
     }, {
-      "title": "Social",
+      "title": "Bike",
       "timeframes": {
         "weekly": {
-          "current": randArray[8],
-          "previous": randArray[9]
+          "current": numTick,
+          "previous": numTick
         }
       }
     }, {
-      "title": "Self Care",
+      "title": "Bike",
       "timeframes": {
         "weekly": {
-          "current": randArray[10],
-          "previous": randArray[11]
+          "current": numTick,
+          "previous": numTick
         }
       }
     }]; 
 
-});
 setData(data);
 
     }

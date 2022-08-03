@@ -13,8 +13,8 @@ function StatusComp(props) {
             <div className='status__item--info-title'>
                 <h3>{props.title}</h3>
             </div>
-            <h2>{props.type_time}hrs</h2>
-            <p>Last {props.type} - {props.last}hrs</p>
+            <h2>{props.type_time}</h2>
+            <p>Last - {props.last}</p>
         </div>
     </div>
   )
