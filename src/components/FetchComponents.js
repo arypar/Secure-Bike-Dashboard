@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import StatusComp from './StatusComp'
-const axios = require('axios');
 var numTick = 0;
 function FetchComponents(props) {
+
+
+
     let [data, setData] = useState([])
     async function getNums() {
       numTick = numTick + 1
