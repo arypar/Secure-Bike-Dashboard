@@ -117,10 +117,7 @@ body{
 
 .status__item--info-title p{font-size: 2vw;}
 .status__item--info-title h3{font-size: 1vw;}
-.status__item--info:hover{
-  background-color: hsl(235, 45%, 61%);
-  cursor: pointer;
-}
+
 
 @media only screen and (max-width: 1200px) {
   .container{
@@ -158,4 +155,5 @@ body{
   .status__item--info-title p{
     font-size: 3vw;
   }
+  
 }
