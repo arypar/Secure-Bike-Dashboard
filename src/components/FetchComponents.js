@@ -48,22 +48,6 @@ function FetchComponents(props) {
           "previous": 10000-numTick
         }
       }
-    }, {
-      "title": "Bike",
-      "timeframes": {
-        "weekly": {
-          "current": numTick,
-          "previous": 10000-numTick
-        }
-      }
-    }, {
-      "title": "Bike",
-      "timeframes": {
-        "weekly": {
-          "current": numTick,
-          "previous": 10000-numTick
-        }
-      }
     }]; 
 
 setData(data);
