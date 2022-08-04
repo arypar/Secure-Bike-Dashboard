@@ -1,36 +1,42 @@
 import React, { useEffect, useState } from 'react'
 import StatusComp from './StatusComp'
+const axios = require('axios');
 var numTick = 0;
+var respList = [];
 function FetchComponents(props) {
 
 
 
     let [data, setData] = useState([])
     async function getNums() {
-      numTick = numTick + 1
+      axios.get('https://cosmosfinal.herokuapp.com').then(resp => {
+        respList[0] = resp.data[0]
+        respList[1] = resp.data[1]
+        respList[2] = resp.data[2]
+    });
     data = [{
-      "title": "Bike",
+      "title": "X-Value",
       "timeframes": {
         "weekly": {
-          "current": numTick,
+          "current": respList[0],
           "previous": 10000-numTick
         }
       }
     }, {
-      "title": "Bike",
+      "title": "Y-Value",
       "timeframes": {
       
         "weekly": {
-          "current": numTick,
+          "current": respList[1],
           "previous": 10000-numTick
         }
       }
     }, {
-      "title": "Bike",
+      "title": "Misc-Value",
       "timeframes": {
      
         "weekly": {
-          "current": numTick,
+          "current": respList[2],
           "previous": 10000-numTick
         }
       }
@@ -67,7 +73,7 @@ setData(data);
       getNums()
       const interval=setInterval(()=>{
         getNums()
-       },100)
+       },750)
        return()=>clearInterval(interval)
          }, [])
     let displayType = props.displayType
