@@ -97,14 +97,14 @@ body{
   height: 85%;
   background-color: hsl(235, 46%, 20%);
   border-radius: 20px;
-  padding: 40px;
+  padding: 30px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 .status__item--info h2{
-  font-weight: 400;
-  font-size: 3vw;
+  font-weight: 800;
+  font-size: 3vw; 
 }
 .status__item--info p {
   color: hsl(236, 100%, 87%);

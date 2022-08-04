@@ -28,9 +28,11 @@ class ProfileComp extends Component {
         </div>
         <div className='profile__card--type'>
           <ul>
+            By Aryan Parekh, Yash Chhatre and Adrian Bahar
           </ul>
         </div>
       </div>
+      
     )
   }
 }

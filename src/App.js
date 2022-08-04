@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import FetchComponents from './components/FetchComponents'
 import ProfileComp from './components/ProfileComp'
-import FooterComp from './components/FooterComp';
 import './index.css'
 
 class App extends Component {
@@ -23,7 +22,6 @@ class App extends Component {
       <div className='container'>
           <ProfileComp displayType={(val) => this.handleDataFromChild(val)}/>
           <FetchComponents displayType={this.state.displayType}/>
-          <FooterComp displayType={this.state.displayType}/>
         </div>
     )
   }

@@ -14,7 +14,6 @@ function StatusComp(props) {
                 <h3>{props.title}</h3>
             </div>
             <h2>{props.type_time}</h2>
-            <p>Last - {props.last}</p>
         </div>
     </div>
   )
