@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import pfp from '../../public/assets/main.jpeg'
 class ProfileComp extends Component {
 
-  constructor(props){
+  constructor(props) {
     super(props)
     this.state = {
       displayType: 'weekly'
@@ -14,13 +14,13 @@ class ProfileComp extends Component {
       displayType: daily.target.innerHTML
     })
     this.props.displayType(this.state.displayType)
-   }
+  }
 
   render() {
     return (
       <div className='profile__card'>
         <div className='profile__card--info'>
-          <img src={pfp} alt={pfp}/>
+          <img src={pfp} alt={pfp} />
           <div className='profile__card--info-text'>
             <p>Cosmos Final Project - Cluster 8</p>
             <h2>Bike 1</h2>
@@ -28,13 +28,13 @@ class ProfileComp extends Component {
         </div>
         <div className='profile__card--type'>
           <ul>
-<h2>
-            Aryan Parekh, Yash Chhatre and Adrian Bahar
+            <h2>
+              Aryan Parekh, Yash Chhatre and Adrian Bahar
             </h2>
           </ul>
         </div>
       </div>
-      
+
     )
   }
 }
