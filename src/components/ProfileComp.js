@@ -22,13 +22,15 @@ class ProfileComp extends Component {
         <div className='profile__card--info'>
           <img src={pfp} alt={pfp}/>
           <div className='profile__card--info-text'>
-            <p>Portal</p>
+            <p>Cosmos Final Project - Cluster 8</p>
             <h2>Bike 1</h2>
           </div>
         </div>
         <div className='profile__card--type'>
           <ul>
-            By Aryan Parekh, Yash Chhatre and Adrian Bahar
+<h2>
+            Aryan Parekh, Yash Chhatre and Adrian Bahar
+            </h2>
           </ul>
         </div>
       </div>

@@ -45,8 +45,9 @@ body{
 }
 .profile__card--info-text h2{
   font-weight: 300;
-  font-size: 3vw;
+  font-size: 2vw;
 }
+
 .profile__card--info img{
   width: 30%;
   border-radius: 50%;
