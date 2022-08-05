@@ -28,7 +28,7 @@ function StatusComp(props) {
     checkPhone()
     const interval = setInterval(() => {
       checkPhone()
-    }, 750)
+    }, 250)
     return () => clearInterval(interval)
   }, [])
 

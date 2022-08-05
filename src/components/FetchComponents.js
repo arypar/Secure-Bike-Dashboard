@@ -3,18 +3,32 @@ import StatusComp from './StatusComp'
 const axios = require('axios');
 var numTick = 0;
 var secondsLeft = 0;
+var lastHit =  new Date().getTime();
+var todayCheck;
+var todayDate;
 var countDownDate;
-var statusDefault;
-var respList = [0,0,0,0];
+var respList = [0,0,0,0,"Connected"];
 function FetchComponents(props) {
 
 
 
   let [data, setData] = useState([])
   async function getNums() {
+
+    todayCheck = new Date().getTime(); 
+    var distanceCheck = todayCheck - lastHit;
+    var secondsCheck = Math.floor((distanceCheck % (1000 * 60)) / 1000);
+    console.log(secondsCheck)
+    if(secondsCheck > 15) {
+      respList[4] = "Disconnected";
+    }
+    
     axios.get('https://cosmosfinal.herokuapp.com').then(resp => {
       if((parseInt(respList[0]) != parseInt(resp.data[0])) || parseInt(respList[1]) != parseInt(resp.data[1])) {
-        var todayDate = new Date()
+        respList[4] = "Connected";
+        var todayDatehit = new Date()
+        lastHit = new Date(todayDatehit).getTime();
+        todayDate = new Date()
         todayDate.setSeconds(todayDate.getSeconds() + 8);
         countDownDate = new Date(todayDate).getTime();
       }
@@ -82,7 +96,17 @@ function FetchComponents(props) {
         }
       }
     },{
-      "title": "Bike",
+      "title": "API Status",
+      "default":"",
+      "textbool":true,
+      "timeframes": {
+        "weekly": {
+          "current": respList[4]
+        }
+      }
+    },
+    {
+      "title": "API",
       "default":"",
       "textbool":true,
       "timeframes": {
@@ -103,7 +127,7 @@ function FetchComponents(props) {
     return () => clearInterval(interval)
   }, [])
   let displayType = props.displayType
-  let colors = ['hsl(15, 100%, 70%)', 'hsl(195, 74%, 62%)', 'hsl(348, 100%, 68%)', 'hsl(145, 58%, 55%)', 'hsl(264, 64%, 52%)', 'hsl(43, 84%, 65%)']
+  let colors = ['hsl(15, 100%, 70%)', 'hsl(195, 74%, 62%)', 'hsl(348, 100%, 68%)', 'hsl(145, 58%, 55%)', 'hsl(264, 64%, 52%)', 'hsl(43, 84%, 65%)','hsl(95, 99%, 85%)']
 
   return (
     <React.Fragment>
