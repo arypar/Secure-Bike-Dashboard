@@ -7,7 +7,7 @@ var lastHit =  new Date().getTime();
 var todayCheck;
 var todayDate;
 var countDownDate;
-var respList = [0,0,0,0,"Connected"];
+var respList = [0,0,0,0,"Connected",0];
 function FetchComponents(props) {
 
 
@@ -42,6 +42,7 @@ function FetchComponents(props) {
       respList[1] = resp.data[1]
       respList[2] = resp.data[2]
       respList[3] = resp.data[3]
+      respList[5] = resp.data[4]
     });
  
     data = [{
@@ -106,12 +107,12 @@ function FetchComponents(props) {
       }
     },
     {
-      "title": "API",
+      "title": "Moved Count",
       "default":"",
       "textbool":true,
       "timeframes": {
         "weekly": {
-          "current": numTick
+          "current": respList[5]
         }
       }
     }];
