@@ -8,14 +8,12 @@ function StatusComp(props) {
     const editNumber = document.getElementById('phonevalue');
     console.log(editNumber.innerHTML);
     if(((editNumber.innerHTML).toString().length == 11)) {
-      var phonePayload = JSON.stringify({
-        "phoneNumber": editNumber.innerHTML
-      });
+     
       
       var config = {
         method: 'post',
         url: 'https://cosmosfinal.herokuapp.com/updatephone',
-        data : phonePayload
+        data : {"phoneNumber":editNumber.innerHTML}
       };
       
       axios(config)
