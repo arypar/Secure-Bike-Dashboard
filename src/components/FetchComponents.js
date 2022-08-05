@@ -46,7 +46,7 @@ function FetchComponents(props) {
     });
  
     data = [{
-      "title": "X-Value",
+      "title": "X-Accel",
       "id": "xvalue",
       "textbool":true,
       "default":"",
@@ -56,7 +56,7 @@ function FetchComponents(props) {
         }
       }
     }, {
-      "title": "Y-Value",
+      "title": "Y-Accel",
       "id": "yvalue",
       "textbool":true,
       "default":"",
