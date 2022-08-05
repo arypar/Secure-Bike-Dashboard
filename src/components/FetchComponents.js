@@ -19,7 +19,7 @@ function FetchComponents(props) {
     var distanceCheck = todayCheck - lastHit;
     var secondsCheck = Math.floor((distanceCheck % (1000 * 60)) / 1000);
     console.log(secondsCheck)
-    if(secondsCheck > 15) {
+    if(secondsCheck > 10) {
       respList[4] = "Disconnected";
     }
     
