@@ -44,9 +44,11 @@ function StatusComp(props) {
                 <h3>{props.title}</h3>
             </div>
            <h2>{props.type_time}</h2>
-           <EditText id={props.id} name="phone" type="phone" style={{width: '200px'}} defaultValue={props.default} inline/>
+           <EditText readonly={props.textbool} id={props.id} name="phone" type="phone" style={{width: '200px'}} defaultValue={props.default} inline/>
         </div>
+
     </div>
+ 
   )
 }
 
