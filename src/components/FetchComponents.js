@@ -78,7 +78,7 @@ function FetchComponents(props) {
     getNums()
     const interval = setInterval(() => {
       getNums()
-    }, 500)
+    }, 1000)
     return () => clearInterval(interval)
   }, [])
   let displayType = props.displayType

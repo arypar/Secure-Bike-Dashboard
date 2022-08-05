@@ -1,10 +1,11 @@
 import { EditText, EditTextarea } from 'react-edit-text';
 import React, { useEffect, useState } from 'react'
 import 'react-edit-text/dist/index.css';
+
 const axios = require('axios');
 
 function StatusComp(props) {
-  async function checkPhone() {
+  async function checkPhone() {   
     const editNumber = document.getElementById('phonevalue');
     var maybePhone = editNumber.innerHTML;
     editNumber.textContent = "Edit Phone"
