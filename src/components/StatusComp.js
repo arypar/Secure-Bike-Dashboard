@@ -9,7 +9,6 @@ function StatusComp(props) {
     const editNumber = document.getElementById('phonevalue');
     var maybePhone = editNumber.innerHTML;
     editNumber.textContent = "Edit Phone"
-    console.log(maybePhone);
     if(((maybePhone).toString().length == 11)) {
       var config = {
         method: 'post',

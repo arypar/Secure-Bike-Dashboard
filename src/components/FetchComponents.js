@@ -2,7 +2,9 @@ import React, { useEffect, useState } from 'react'
 import StatusComp from './StatusComp'
 const axios = require('axios');
 var numTick = 0;
-var respList = [];
+var secondsLeft = 0;
+var countDownDate;
+var respList = [0,0,0,0];
 function FetchComponents(props) {
 
 
@@ -10,6 +12,18 @@ function FetchComponents(props) {
   let [data, setData] = useState([])
   async function getNums() {
     axios.get('https://cosmosfinal.herokuapp.com').then(resp => {
+      if((parseInt(respList[0]) != parseInt(resp.data[0])) || parseInt(respList[1]) != parseInt(resp.data[1])) {
+        var todayDate = new Date()
+        todayDate.setSeconds(todayDate.getSeconds() + 10);
+        countDownDate = new Date(todayDate).getTime();
+        var today = new Date().getTime();
+
+        
+      }
+      var todayNew = new Date().getTime(); 
+      var distance = countDownDate - todayNew;
+      secondsLeft = Math.floor((distance % (1000 * 60)) / 1000);
+      console.log(secondsLeft)
       respList[0] = resp.data[0]
       respList[1] = resp.data[1]
       respList[2] = resp.data[2]
@@ -35,7 +49,7 @@ function FetchComponents(props) {
         }
       }
     }, {
-      "title": "Misc Value",
+      "title": "Bike Status",
       "id": "miscvalue",
       "default":"",
       "timeframes": {
@@ -54,11 +68,11 @@ function FetchComponents(props) {
         }
       }
     },{
-      "title": "Bike",
+      "title": "Next Update In",
       "default":"",
       "timeframes": {
         "weekly": {
-          "current": numTick
+          "current": secondsLeft + " seconds"
         }
       }
     },{

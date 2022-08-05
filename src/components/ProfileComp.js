@@ -24,6 +24,7 @@ class ProfileComp extends Component {
           <div className='profile__card--info-text'>
             <p>Cosmos Final Project - Cluster 8</p>
             <h2>Bike 1</h2>
+    
           </div>
         </div>
         <div className='profile__card--type'>
@@ -31,6 +32,7 @@ class ProfileComp extends Component {
             <h2>
               Aryan Parekh, Yash Chhatre and Adrian Bahar
             </h2>
+            
           </ul>
         </div>
       </div>
