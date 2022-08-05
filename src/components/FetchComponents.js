@@ -17,6 +17,7 @@ function FetchComponents(props) {
     });
     data = [{
       "title": "X-Value",
+      "id": "xvalue",
       "default":"",
       "timeframes": {
         "weekly": {
@@ -25,6 +26,7 @@ function FetchComponents(props) {
       }
     }, {
       "title": "Y-Value",
+      "id": "yvalue",
       "default":"",
       "timeframes": {
 
@@ -34,6 +36,7 @@ function FetchComponents(props) {
       }
     }, {
       "title": "Misc Value",
+      "id": "miscvalue",
       "default":"",
       "timeframes": {
 
@@ -43,6 +46,7 @@ function FetchComponents(props) {
       }
     }, {
       "title": "Alert Phone Number",
+      "id": "phonevalue",
       "default":"Edit Phone",
       "timeframes": {
         "weekly": {
@@ -74,7 +78,7 @@ function FetchComponents(props) {
     getNums()
     const interval = setInterval(() => {
       getNums()
-    }, 100)
+    }, 500)
     return () => clearInterval(interval)
   }, [])
   let displayType = props.displayType
@@ -84,7 +88,7 @@ function FetchComponents(props) {
     <React.Fragment>
       {
         data.map((dataItem, index) => {
-          return <StatusComp key={index} type={'Week'} title={dataItem.title} image={dataItem.image} last={dataItem.timeframes.weekly.previous} type_time={dataItem.timeframes.weekly.current} bgcolor={colors.shift()} default={dataItem.default}/>
+          return <StatusComp key={index} type={'Week'} title={dataItem.title} image={dataItem.image} last={dataItem.timeframes.weekly.previous} type_time={dataItem.timeframes.weekly.current} bgcolor={colors.shift()} default={dataItem.default} id={dataItem.id}/>
 
         })
       }

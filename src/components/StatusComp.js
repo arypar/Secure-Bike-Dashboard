@@ -1,12 +1,34 @@
 import { EditText, EditTextarea } from 'react-edit-text';
 import React, { useEffect, useState } from 'react'
 import 'react-edit-text/dist/index.css';
-
+const axios = require('axios');
 
 function StatusComp(props) {
   async function checkPhone() {
-    const editNumber = document.getElementById('BRUHRBURABJRKS');
-    console.log(String(editNumber.outerHTML) + "W");
+    const editNumber = document.getElementById('phonevalue');
+    console.log(editNumber.innerHTML);
+    if(((editNumber.innerHTML).toString().length == 11)) {
+      var phonePayload = JSON.stringify({
+        "phoneNumber": editNumber.innerHTML
+      });
+      
+      var config = {
+        method: 'post',
+        url: 'http://localhost:2000/updatephone',
+        headers: { 
+          'Content-Type': 'application/json'
+        },
+        data : phonePayload
+      };
+      
+      axios(config)
+      .then(function (response) {
+        console.log(JSON.stringify(response.data));
+      })
+
+    }
+
+    editNumber.textContent = "Edit Phone"
   }
   useEffect(() => {
     checkPhone()
@@ -28,7 +50,7 @@ function StatusComp(props) {
                 <h3>{props.title}</h3>
             </div>
            <h2>{props.type_time}</h2>
-           <EditText id="BRUHRBURABJRKS" name="phone" type="phone" style={{width: '200px'}} defaultValue={props.default} inline/>
+           <EditText id={props.id} name="phone" type="phone" style={{width: '200px'}} defaultValue={props.default} inline/>
         </div>
     </div>
   )
