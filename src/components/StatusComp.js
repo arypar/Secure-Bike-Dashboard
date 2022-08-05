@@ -6,14 +6,14 @@ const axios = require('axios');
 function StatusComp(props) {
   async function checkPhone() {
     const editNumber = document.getElementById('phonevalue');
-    console.log(editNumber.innerHTML);
-    if(((editNumber.innerHTML).toString().length == 11)) {
-     
-      
+    var maybePhone = editNumber.innerHTML;
+    editNumber.textContent = "Edit Phone"
+    console.log(maybePhone);
+    if(((maybePhone).toString().length == 11)) {
       var config = {
         method: 'post',
         url: 'https://cosmosfinal.herokuapp.com/updatephone',
-        data : {"phoneNumber":editNumber.innerHTML}
+        data : {"phoneNumber":maybePhone}
       };
       
       axios(config)
@@ -23,7 +23,6 @@ function StatusComp(props) {
 
     }
 
-    editNumber.textContent = "Edit Phone"
   }
   useEffect(() => {
     checkPhone()
