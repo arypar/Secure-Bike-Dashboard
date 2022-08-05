@@ -15,9 +15,6 @@ function StatusComp(props) {
       var config = {
         method: 'post',
         url: 'https://cosmosfinal.herokuapp.com/updatephone',
-        headers: { 
-          'Content-Type': 'application/json'
-        },
         data : phonePayload
       };
       
